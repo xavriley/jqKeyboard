@@ -1,25 +1,36 @@
 <!DOCTYPE>
 <html>
   <head>
+    <style>
+      #keyboard {height: 400px; width: 800px; position: absolute;}
+      .key {width: 50px; border: 1px solid black; float:left; }
+      .white {height: 100%;}
+      .black {height: 60%;position:relative;top: 0px; left: 0px;background: black none no-repeat; }
+      .white.selected {background: #aad; opacity: 0.9;}
+      .black.selected {background: #003; opacity: 0.9;}
+    </style>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
     <script>
-    
+      $('document').ready(function() {
+        $('.key').toggle(function() { $(this).addClass('selected'); }, function() { $(this).removeClass('selected'); });
+      });
     </script>
   </head>
   <body>
     <div id="keyboard">
-      <div class="c key"></div>
-      <div class="cs key"></div>
-      <div class="d key"></div>
-      <div class="ds key"></div>
-      <div class="e key"></div>
-      <div class="f key"></div>
-      <div class="fs key"></div>
-      <div class="g key"></div>
-      <div class="gs key"></div>
-      <div class="a key"></div>
-      <div class="as key"></div>
-      <div class="b key"></div>
-      <div class="c key"></div>
+      <div class="c key white"></div>
+      <div class="cs key black"></div>
+      <div class="d key white"></div>
+      <div class="ds key black"></div>
+      <div class="e key white"></div>
+      <div class="f key white"></div>
+      <div class="fs key black"></div>
+      <div class="g key white"></div>
+      <div class="gs key black"></div>
+      <div class="a key white"></div>
+      <div class="as key black"></div>
+      <div class="b key white"></div>
+      <div class="c key white"></div>
     </div>
   </body>
 </html>
